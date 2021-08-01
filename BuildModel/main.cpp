@@ -11,5 +11,6 @@ int main() {
     int b = 1;
     auto sum = Add(a, b);
     cout << sum << endl;
+    sayHello();
     return 0;
 }

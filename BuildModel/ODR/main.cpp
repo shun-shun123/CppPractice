@@ -5,5 +5,6 @@
 using namespace std;
 
 int main() {
+    cout << Dot(1, 1, 2, 2) << endl;
     return 0;
 }

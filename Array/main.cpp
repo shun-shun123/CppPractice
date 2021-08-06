@@ -38,9 +38,26 @@ void multiDimensionalArray() {
     cout << firstRow[0] << ", " << firstRow[1] << ", " << firstRow[2] << endl;
 }
 
-Pointers to Arrays and Arrays of Pointersから続きやっていく
+// C#だとSystem.StringというクラスでGC対象として作成できる文字列がある
+// C++の場合はnull-terminatedのchar配列になる
+void stringSample() {
+    cout << "=====stringSample=====" << endl;
+
+    // char[6]の配列として扱える
+    // h e l l o 0
+    const char hello[] = "hello";
+
+    // 他の配列と同様に、ポインタに変換できる
+    const char* p = hello;
+
+    for (int i = 0; i < 6; i++) {
+        cout << p[i];
+    }
+    cout << endl;
+}
 
 int main() {
     simpleArray();
     multiDimensionalArray();
+    stringSample();
 }

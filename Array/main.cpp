@@ -54,10 +54,71 @@ void stringSample() {
         cout << p[i];
     }
     cout << endl;
+
+    // char[]は上書きできない
+    // hello[0] = 'a';
+}
+
+void variousStrings() {
+    cout << "=====variousStrings=====" << endl;
+    // ASCII 
+    const char chr[] = "hello";
+
+    // Wide character string
+    const wchar_t wChr[] = L"hello";
+
+    // UTF-8 string
+    const char8_t utf8Chr[] = u8"hello";
+
+    // UTF-16
+    const char16_t utf16Chr[] = u"hello";
+
+    // UTF-32
+    const char32_t utf32Chr[] = U"hello";
+}
+
+void concatenateStrings() {
+    // 文字列連結に+はいらない
+    const char msg[] = "Hello, " "World!";
+
+    cout << msg << endl;
+}
+
+// 適当な関数なので実装は気にしない
+int getHealth() {
+    return 100;
+}
+
+int getLives() {
+    return 2;
+}
+
+// 関数ポインタについて
+void functionPointer() {
+    // 関数へのポインタを持つことができる
+    // この場合は、引数なしのメソッドに対するポインタを持つので宣言もこんな感じでできる
+    int (*p)() = getHealth;
+
+    int health = p();
+
+    cout << "health: " << health << endl;
+}
+
+// 関数ポインタを配列として持つこともできる
+void functoinPointersArray() {
+    int (*p[])() = { getHealth, getLives};
+    int health = p[0]();
+    int lives = p[1]();
+
+    cout << "health: " << health << endl;
+    cout << "lives: " << lives << endl;
 }
 
 int main() {
     simpleArray();
     multiDimensionalArray();
     stringSample();
+    concatenateStrings();
+    functionPointer();
+    functoinPointersArray();
 }

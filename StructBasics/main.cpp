@@ -93,8 +93,25 @@ void reinterpretStruct() {
     cout << "w: " << pQuat->w << endl;
 }
 
+struct BitPlayer {
+    bool IsAlive : 1;
+    uint8_t Lives : 3;
+    uint8_t Team : 2;
+    uint8_t WeaponID : 2;
+};
+
+struct PlayerScore {
+    static int32_t HighScore;
+};
+
+void printPlayerScore() {
+    cout << "=====printPlayerScore=====" << endl;
+    cout << "PlayerScore::HighScore " << PlayerScore::HighScore << endl;
+}
+
 int main() {
     useStructSample();
     anonymousStruct();
     reinterpretStruct();
+    printPlayerScore();
 }
